@@ -954,6 +954,13 @@
     decimal: makeFilter(function(value) {
       return value ? parseFloat(value) : 0;
     })
+	
+	// compare values and do something:
+    // toggle:equal(pagestate,'state1')"
+	equal: makeFilter(function(value, equalFrom, equalTo) {
+		equalTo = equalTo || value;
+		return equalFrom === equalTo ? value : null;
+	})
   };
 
   // Define allowed binding parameters:
