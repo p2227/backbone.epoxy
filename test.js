@@ -377,6 +377,8 @@ describe("Backbone.Epoxy.View", function() {
 			lastName: "Skywalker",
 			preference: "b",
 			active: true,
+			state:'state1',
+			equalVal:'0',
 			valOptions: "1",
 			valDefault: "1",
 			valEmpty: "1",
@@ -1224,4 +1226,19 @@ describe("Backbone.Epoxy.View", function() {
 		viewModel.set("checkList", []);
 		expect( $el.hasClass("hilite") ).to.equal( false );
 	});
+
+	it("operating with equal() should compare two values and return bool/special value", function() {
+		var $el1 = $(".test-mod-equal1"), $el2 = $(".test-mod-equal2");
+		expect( isVisible($el1) ).to.equal( true );
+		expect( isVisible($el2) ).to.equal( false );
+		dataModel.set("state", 'state2');
+		expect( isVisible($el1) ).to.equal( false );
+		expect( isVisible($el2) ).to.equal( true );
+
+		var $el3 = $(".test-mod-equal3");
+		expect( $el3.text() ).to.equal( '' );
+		dataModel.set("equalVal", '1');
+		expect( $el3.text() ).to.equal( 'Luke' );
+	});
+
 });

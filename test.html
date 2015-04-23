@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Backbone.Epoxy - Test Suite</title>
+	<meta charset="utf-8">
+	<title>Backbone.Epoxy - Test Suite</title>
 
 	<link rel="stylesheet" type="text/css" href="node_modules/mocha/mocha.css">
 
@@ -103,6 +104,9 @@
 			<p class="test-mod-length" data-bind="classes:{hilite:length(checkList)}">Checklist Length</p>
 			<p class="test-mod-format" data-bind="text:format('Name: $1 $2',firstName,lastName)"></p>
 			<p class="test-mod-select" data-bind="text:select(active,firstName,lastName)"></p>
+			<p class="test-mod-equal1" data-bind="toggle:equal(state,'state1')">state1 text</p>
+			<p class="test-mod-equal2" data-bind="toggle:equal(state,'state2')">state2 text</p>
+			<p class="test-mod-equal3" data-bind="text:equal(firstName,equalVal,'1')"></p>
 		</div>
 		<div class="section">
 			<p><select class="test-select" data-bind="value:valOptions,options:optionsList"></select></p>
@@ -142,7 +146,7 @@
 	<script src="backbone.epoxy.js"></script>
 	<script>
 	expect = chai.expect;
-  mocha.setup('bdd');
+	mocha.setup('bdd');
 	_.templateSettings = { interpolate : /\{\{(.+?)\}\}/g };
 	</script>
 

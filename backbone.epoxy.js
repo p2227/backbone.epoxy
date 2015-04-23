@@ -953,13 +953,12 @@
     // Float formatting [read-write]:
     decimal: makeFilter(function(value) {
       return value ? parseFloat(value) : 0;
-    })
+    }),
 	
-	// compare values and do something:
-    // toggle:equal(pagestate,'state1')"
+    // compare values and do something [read-only]:
 	equal: makeFilter(function(value, equalFrom, equalTo) {
 		equalTo = equalTo || value;
-		return equalFrom === equalTo ? value : null;
+		return equalFrom === equalTo ? value : "";
 	})
   };
 
