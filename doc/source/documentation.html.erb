@@ -75,6 +75,7 @@ title: Documentation
 	<li><a href="#filter-none">none</a></li>
 	<li><a href="#filter-not">not</a></li>
 	<li><a href="#filter-select">select</a></li>
+	<li><a href="#filter-equal">equal</a></li>
 </ul>
 
 <b><a href="#binding">Epoxy.binding</a></b>
@@ -992,6 +993,13 @@ var view = new ListView();</code></pre>
 	<span class="alias">read-only</span>
 	<code>data-bind="text:select(conditionalValue,truthyValue,falseyValue)"</code>
 	<p>Performs a ternary operation using JavaScript's <tt>?:</tt> operator. The <b>select</b> operation receives three arguments: the first argument is assessed as a loosely-typed conditional; if truthy, the second argument is returned; if falsey, the third argument is returned.</p>
+</div>
+
+<div class="section">
+	<h3 id="filter-equal">equal</h3>
+	<span class="alias">read-only</span>
+	<code>data-bind="text:equal([returnValue],compareTo,compareForm)"</code>
+	<p>Returns <tt>returnValue</tt> if <tt>compareTo</tt> is equal to <tt>compareForm</tt>, or return an empty string if they are not equal.If <tt>returnValue</tt> is omitted ,it returns <tt>true</tt>/<tt>false</tt> if the two arguments are equal or not</p>
 </div>
 
 <div class="section">

@@ -955,10 +955,13 @@
       return value ? parseFloat(value) : 0;
     }),
 	
-    // compare values and do something [read-only]:
-	equal: makeFilter(function(value, equalFrom, equalTo) {
-		equalTo = equalTo || value;
-		return equalFrom === equalTo ? value : "";
+    // compare values and return [read-only]:
+	equal: makeFilter(function(value, equalTo, equalForm) {
+      if(equalForm){
+        return equalTo === equalForm ? value : "";
+      }else{
+        return equalTo === value;
+      }
 	})
   };
 
